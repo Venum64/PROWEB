@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      let holder = "some text";
+      function App() {
+        const { useState } = React;
+        const [count, setCount] = React.useState(5);
+        const [text, setText] = useState("");
+        const [view, setView] = useState(true);
+        const addCount = (arg) => {
+          setCount(count + arg);
+        };
+        let content = "";
+        if (text.length == 0) content = "You did't type anything";
+        else if (text.length <= 5) content = "You typed in less than 5 symbols";
+        else content = "You typed in more than 5 symbols";
+        return (
+          <div className="wrapper">
+            <div className="box">
+              <h2>{count}</h2>
+              <button onClick={() => setCount(count - 1)}>minus</button>
+              <button onClick={() => addCount(15)}>plus</button>
+            </div>
+            <div className="box">
+              {/**/}
+              <input
+                type={view ? "text" : "password"}
+                placeholder={holder}
+                onChange={(event) => setText(event.target.value)}
+                value={text}
+              />
+              <button onClick={() => setView(!view)}>
+                {view ? "hide" : "Show"}
+              </button>
+              <p>Written text {text}</p>
+              <p>{content}</p>
+              <p>{text.length == 0 ? "You did't type anything" : text.length <= 5 ? "You typed in less than 5 symbols" : "You typed in more than 5 symbols"}</p>
+            </div>
+          </div>
+        );
+      }
+      const app = document.getElementById("root");
+      const root = ReactDOM.createRoot(app);
+      root.render(<App />);
+    </script>
+  </body>
+</html>

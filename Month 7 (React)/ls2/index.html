@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ЦИКЛЫ</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState } = React;
+      function App() {
+        const [arr, setArr] = useState([]);
+        const [textInput, setTextInput] = useState("");
+        let text = "Заметки";
+        const addNote = (e) => {
+          e.preventDefault();
+          if (textInput.length > 2) {
+            let note = {
+              id: Math.random(),
+              title: textInput,
+            };
+            setArr([...arr, note]);
+            setTextInput("");
+          } else {
+            alert("введите больше трех символов");
+            setTextInput;
+          }
+        };
+        const delNote = (id) => {
+          setArr(arr.filter((item) => item.id != id));
+        };
+        return (
+          <div className="wrapper">
+            <h1>{text}</h1>
+            <form className="form">
+              <input
+                type="text"
+                value={textInput}
+                onChange={(e) => setTextInput(e.target.value)}
+              />
+              <button onClick={(e) => addNote(e)}>Добавить</button>
+            </form>
+            {!!arr.length ? (
+              <ul>
+                {arr?.map((item, i) => (
+                  <li className="list__item" key={item.id}>
+                    {item.title}
+                    <button onClick={() => delNote(item.id)}>Удалить</button>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <h1>В списке нет элементов</h1>
+            )}
+          </div>
+        );
+      }
+      const app = document.getElementById("root");
+      const root = ReactDOM.createRoot(app);
+      root.render(<App />);
+    </script>
+  </body>
+</html>

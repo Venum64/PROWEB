@@ -1,0 +1,25 @@
+@media screen and (max-width: 1140px) {
+  .flex {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .flex__card{
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+.flex__card{
+    width: 320px;
+}
+}
+
+@media screen and (max-width: 768px){
+    .flex{
+
+    }
+
+    .flex__card{
+        flex-direction: column;
+    }
+} 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dBurger</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="wrapper__nav">
+        <div class="container wrapper__navbar">
+          <a href="#" class="logo">
+            <img src="./images/logo.png" alt="" />
+            dBurger
+          </a>
+          <div class="wrapper__navbar-right">
+            <button class="wrapper__navbar-btn">
+              <img src="./images/shop-icon.svg" alt="" />
+              <span class="wrapper__navbar-count"></span>
+            </button>
+            <div class="wrapper__navbar-basket">
+              <div class="wrapper__navbar-basket_top">
+                <h3 class="wrapper__navbar-basket_top-h">Корзина</h3>
+                <button class="wrapper__navbar-basket_close"></button>
+              </div>
+              <div class="wrapper__navbar-basket_checklist">
+                <!-- <div class="wrapper__navbar-product">
+                  <div class="wrapper__navbar-product_info">
+                    <img
+                      class="wrapper__navbar-product_info-img"
+                      src="./images/products/burger-1.png"
+                      alt=""
+                    />
+                    <div class="wrapper__navbar-product_info-sub">
+                      <p class="wrapper__navbar-product_info-sub_name">Crazy</p>
+                      <p class="wrapper__navbar-product_info-sub_price">31 000 сум</p>
+                    </div>
+                    <div class="wrapper__navbar-product_option">
+                      <button
+                        class="wrapper__navbar-product_option-symbol fa-minus"
+                        data-symbol="-"
+                      >
+                        -
+                      </button>
+                      <output
+                        class="wrapper__navbar-product_option-count"
+                      >10</output>
+                      <button
+                        class="wrapper__navbar-product_option-symbol fa-plus"
+                        data-symbol="+"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div class="wrapper__navbar-basket_bottom">
+                <h3 class="wrapper__navbar-basket_bottom-h">Заказать</h3>
+                <span class="wrapper__navbar-basket_bottom-totalprice">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container wrapper__view">
+        <img src="./images/big-burger.png" alt="" />
+      </div>
+
+      <div class="container wrapper__list">
+        <div class="wrapper__list-card" id="crazy">
+          <p class="wrapper__list-card_count"></p>
+          <img
+            src="./images/products/burger-1.png"
+            alt=""
+            class="wrapper__list-card_img"
+          />
+          <h3 class="wrapper__list-card_title">Crazy</h3>
+          <div class="wrapper__list-card_bottom">
+            <p class="wrapper__list-card_bottom-price">31 000 сум</p>
+            <button class="wrapper__list-card_bottom-btn">
+              <img src="./images/sell-icon.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="wrapper__list-card" id="light">
+          <p class="wrapper__list-card_count"></p>
+          <img
+            src="./images/products/burger-2.png"
+            alt=""
+            class="wrapper__list-card_img"
+          />
+          <h3 class="wrapper__list-card_title">Light</h3>
+          <div class="wrapper__list-card_bottom">
+            <p class="wrapper__list-card_bottom-price">26 000 сум</p>
+            <button class="wrapper__list-card_bottom-btn">
+              <img src="./images/sell-icon.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="wrapper__list-card" id="cheeseburger">
+          <p class="wrapper__list-card_count"></p>
+          <img
+            src="./images/products/burger-3.png"
+            alt=""
+            class="wrapper__list-card_img"
+          />
+          <h3 class="wrapper__list-card_title">CheeseBurger</h3>
+          <div class="wrapper__list-card_bottom">
+            <p class="wrapper__list-card_bottom-price">29 000 сум</p>
+            <button class="wrapper__list-card_bottom-btn">
+              <img src="./images/sell-icon.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="wrapper__list-card" id="dburger">
+          <p class="wrapper__list-card_count"></p>
+          <img
+            src="./images/products/burger-4.png"
+            alt=""
+            class="wrapper__list-card_img"
+          />
+          <h3 class="wrapper__list-card_title">dBurger</h3>
+          <div class="wrapper__list-card_bottom">
+            <p class="wrapper__list-card_bottom-price">24 000 сум</p>
+            <button class="wrapper__list-card_bottom-btn">
+              <img src="./images/sell-icon.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script/app.js"></script>
+  </body>
+</html>
